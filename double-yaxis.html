@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .echart {
+        width: 600px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main" class="echart"></div>
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>
+    <script>
+      var chart = echarts.init(document.getElementById("main"));
+
+      var option = {
+        xAxis: {
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+        },
+        yAxis: [{}, {}],
+        series: [
+          {
+            yAxisIndex: 0,
+            type: "line",
+            data: [111, 222, 55, 600, 332, 11, 200]
+          },
+          {
+            yAxisIndex: 1,
+            type: "bar",
+            data: [585, 888, 33, 600, 111, 11, 42]
+          }
+        ]
+      };
+      chart.setOption(option);
+    </script>
+  </body>
+</html>

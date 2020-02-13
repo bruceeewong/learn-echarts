@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .echart {
+        width: 600px;
+        height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main" class="echart"></div>
+    <script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>
+    <script>
+      var chart = echarts.init(document.getElementById("main"));
+      var option = {
+        title: {
+          text: "Echarts 入门示例"
+        },
+        tooltip: {},
+        legend: {
+          data: ["销量"]
+        },
+        dataset: {
+          source: [
+            ["衬衫", 5],
+            ["羊毛衫", 20],
+            ["雪纺衫", 36],
+            ["裤子", 10],
+            ["高跟鞋", 10],
+            ["袜子", 20]
+          ]
+        },
+        xAxis: { type: "category" },
+        yAxis: {},
+        series: [
+          {
+            name: "销量",
+            type: "bar",
+            encode: { x: 0, y: 1 }
+          }
+        ]
+      };
+      chart.setOption(option);
+    </script>
+  </body>
+</html>
